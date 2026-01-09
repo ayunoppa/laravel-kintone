@@ -39,7 +39,26 @@ export default function Login({
             )}
 
             <form onSubmit={submit}>
-                <div>
+                {/* kintone OAuth（通常遷移） */}
+                <div className="space-y-4">
+                    <a
+                        href={route('cybozu.redirect')}
+                        className="inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50"
+                    >
+                        kintoneでログイン
+                    </a>
+
+                    <div className="relative">
+                        <div className="absolute inset-0 flex items-center">
+                            <div className="w-full border-t border-gray-200" />
+                        </div>
+                        <div className="relative flex justify-center text-sm">
+                            <span className="bg-white px-2 text-gray-500">または</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mt-6">
                     <InputLabel htmlFor="email" value="Email" />
 
                     <TextInput
@@ -78,15 +97,10 @@ export default function Login({
                             name="remember"
                             checked={data.remember}
                             onChange={(e) =>
-                                setData(
-                                    'remember',
-                                    (e.target.checked || false) as false,
-                                )
+                                setData('remember', (e.target.checked || false) as false)
                             }
                         />
-                        <span className="ms-2 text-sm text-gray-600">
-                            Remember me
-                        </span>
+                        <span className="ms-2 text-sm text-gray-600">Remember me</span>
                     </label>
                 </div>
 
@@ -105,12 +119,7 @@ export default function Login({
                     </PrimaryButton>
                 </div>
             </form>
-            <Link
-                href={route("cybozu.redirect")}
-                className="inline-flex w-full items-center justify-center rounded-md border px-4 py-2 text-sm font-medium"
-            >
-                kintoneでログイン
-            </Link>
+
         </GuestLayout>
     );
 }
