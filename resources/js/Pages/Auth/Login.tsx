@@ -105,6 +105,12 @@ export default function Login({
                     </PrimaryButton>
                 </div>
             </form>
+            <Link
+                href={route("cybozu.redirect")}
+                className="inline-flex w-full items-center justify-center rounded-md border px-4 py-2 text-sm font-medium"
+            >
+                kintoneでログイン
+            </Link>
         </GuestLayout>
     );
 }
