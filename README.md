@@ -19,7 +19,7 @@ Which starter kit would you like to install?
 React
 
 Which authentication provider do you prefer?
-Laravel's built-in authentication
+Laravel’s built-in authentication
 
 Which testing framework do you prefer?
 Pest
