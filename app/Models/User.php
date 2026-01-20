@@ -7,11 +7,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
+// ulid型を使うために追加
+use Illuminate\Database\Eloquent\Concerns\HasUlids;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, TwoFactorAuthenticatable;
+    // ulid型を使うためにHasUlidsを追加
+    use HasFactory, Notifiable, TwoFactorAuthenticatable, HasUlids;
+
+    // ulid型を使うために追加
+    protected $keyType = 'string';
+    public $incrementing = false;
 
     /**
      * The attributes that are mass assignable.
