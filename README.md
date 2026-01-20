@@ -47,6 +47,7 @@ mv tmp src
 git checkout src/.gitkeep
 
 chown -R www-data:www-data src
+docker compose up -d
 ```
 ### .envファイルを編集
 
