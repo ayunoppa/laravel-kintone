@@ -37,7 +37,7 @@ Which agents need AI guidelines for Laravel?
 GitHub Copilot
 
 Would you like to run npm install and npm run build?
-Yes
+No
 ──────────────────────────
 
 docker compose down -v
